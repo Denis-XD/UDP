@@ -1,34 +1,159 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UDP</title>
-    <link rel="icon" href="multimedia/icono.png">
-    <link rel="stylesheet" href="estilos.css">
-
-</head>
-<body>
-
+    <link rel="icon" href="multimedia/icono.png" />
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body>
     <header>
-
+      <h1>PROTOCOLO UDP</h1>
     </header>
-    <nav>
-        
-    </nav> 
+    <nav></nav>
     <main>
-        <section>
-            <pre>
-
+      <section>
+        <h2>&iquest;Como se estructura la cabecera UDP&quest;</h2>
+        <pre>
+                Como es tipico en todos los protocolos&comma; los paquetes UDP consisten en una cabecera
+                &lpar;header&rpar; y los datos reales del usuario&period; La cabecera UDP contiene toda informacion
+                necesaria para la transmision de datos utilizando el protocolo de transporte y hace 
+                que  un paquete UDP se pueda identificar como tal&period; La cabecera UDP consta de 4 
+                campos y esta dividia en <b>2 bloques de 23 bits</b> con la siguiente estructura&colon;
             </pre>
+        <table border="1">
+          <tr>
+            <th></th>
+            <th>Bits 0-15</th>
+            <th>Bits 16-31</th>
+          </tr>
+          <tr>
+            <td>cero</td>
+            <td>Puerto de origen</td>
+            <td>Puerto de destino</td>
+          </tr>
+          <tr>
+            <td>32</td>
+            <td>Longitud del mensaje</td>
+            <td>Suma de verificacion</td>
+          </tr>
+        </table>
+        <pre>
+                Los primeros 16 bits de la cabecera identifican el <b>puerto de origen</b> desde el que se 
+                ha enviado un datagrama correcto&period; El receptor necesita esta informacion para poder
+                responder al paquete&period; Ya que UDP funciona <b>sin conexion</b> y basicamente no requiere 
+                ninguna comunicacion entre el emisor y el receptor&comma; el campo de puerto de origen es
+                <b>opcional&period;</b> En caso de no ser utilizado&comma; el puerto de origen debe ser puestoa cero&period;
+            </pre>
+        <pre>
+                En el siguiente campo se especifica el puerto de destino&comma; es decir&comma; se indica el 
+                servicio solicitado&period; Esta información es obligatoria&comma; al contrario que el puerto de 
+                origen&comma; porque si no&comma; no sería posible asignar correctamente el datagrama&period;      
+            </pre
+        >
+        <div>
+          <p>&excl;Nota</p>
+          <pre>
+                    Lo siguiente es aplicable a los campos de puerto&colon; si se trata de una aplicación del 
+                    lado del cliente&comma; es probable que el número de puerto asignado sea volátil&period; Si el 
+                    puerto ha sido asignado a un proceso del servidor&comma; el número de puerto será 
+                    normalmente uno de los puertos conocidos &lpar;well&macr;known ports&rpar;&period;
+                </pre
+          >
+        </div>
+        <pre>
+                La cabecera UDP se completa con la checksum o suma de comprobación&comma; que se utiliza 
+                para detectar errores durante la transmisión&period; De esta manera&comma; se puede detectar si 
+                los datos han sufrido alguna alteración en el camino&period; No obstante&comma; los paquetes 
+                detectados se descartan y no se cursa una nueva solicitud&period; Para generar la suma&comma; se 
+                utilizan partes&period;
+                
+                
+            </pre
+        >
+        <ul>
+          <li>De la cabecera UDP</li>
+          <li>De los datos del usuario</li>
+          <li>De la pseudocabecera</li>
+        </ul>
+      </section>
+      <section>
+        <h2>&iquest;Que aplicaciones utilizan el protocolo UDP&quest;</h2>
+        <pre>
+                El protocolo de datagramas de usuario&comma; debido a su estructura mínima y a su falta 
+                de mecanismos que garanticen una transmisi&oacute;n completa y exitosa&comma; no puede 
+                utilizarse como protocolo de transporte universal&period; En realidad&comma; fue diseñado desde el 
+                principio  pensando en aplicaciones que (todavía) no requieren un servicio de transmisión 
+                fiable&period; Por ello&comma; el campo de aplicación del protocolo UDP es limitado&comma; aunque 
+                es necesario subrayar su enorme valor&comma; como demuestran los siguientes tipos de aplicación 
+                del mismo&colon;  
+            </pre
+        >
+        <ul>
+          <li>
+            <b>Aplicaciones basadas en best effort delivery&colon;</b> el
+            escenario t&itilde;pico en el que encontramos<br />
+            el protocolo UDP son aplicaciones basadas en la entrega de mejor
+            esfuerzo&period;
+          </li>
+          <li>
+            <b>Aplicaciones ligeras&colon;</b> la baja sobrecarga del protocolo
+            de transporte proporciona un<br />
+            soporte óptimo para las aplicaciones que tengan un diseño muy
+            sencillo&period;
+          </li>
+          <li>
+            <b
+              >Aplicaciones con mecanismos propios para una transmisión
+              fiable&colon;</b
+            >
+            el UDP puede<br />
+            resultar interesante para aquellas aplicaciones que necesitan un
+            intercambio<br />
+            de información fiable&comma; pero que dependen de sus propios
+            mecanismos a la hora<br />
+            de dar respuesta a los datagramas&period;
+          </li>
+          <li>
+            <b>Aplicaciones multicast&colon;</b> mientras que los protocolos de
+            transporte confiables como<br />
+            el protocolo TCP se limitan a la comunicación de extremo a
+            extremo&comma; el protocolo<br />
+            UDP también soporta conexiones de multidifusión IP&period;
+          </li>
+          <li>
+            <b
+              >Aplicaciones en tiempo real &lpar;real time
+              applications&rpar;&colon;</b
+            >
+            por último, el UDP también es <br />
+            adecuado como protocolo de transporte para servicios que presentan
+            requisitos <br />
+            de comunicación en como las transmisiones de audio o vídeo&period;
+          </li>
+        </ul>
+      </section>
+      <section>
+        <h2>TCP versus UDP</h2>
+        <pre>
+          El UDP es más rápido pero menos fiable que el <b>TCP</b>&comma; otro protocolo de 
+          transporte habitual&period; En una comunicación TCP&comma; los dos ordenadores 
+          comienzan estableciendo una conexión mediante un proceso automatizado 
+          llamado &quot;protocolo de enlace&quot;&period; Un ordenador no transferirá realmente 
+          paquetes de datos al otro hasta que no se haya completado el protocolo 
+          de enlace&period;
 
-        </section>
-        <article>
-            
-        </article>
+          Las comunicaciones UDP no pasan por este proceso&period; En su lugar&comma; un 
+          ordenador simplemente puede empezar a enviar datos al otro&colon;
+        </pre>
+        <img src="multimedia/img1.jpg" alt="">
+      </section>
+      <article>
+        <h3>Ejemplo de UDP</h3>
+        <video src="multimedia/vid1.mp4" controls></video>
+      </article>
     </main>
-    <footer>
-
-    </footer>
-</body>
+    <footer></footer>
+  </body>
 </html>
