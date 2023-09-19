@@ -17,29 +17,31 @@
         
     </nav> 
     <main>
-        <section1>
+        <section>
+            <h2><b>&iquest;QUÉ ES UDP&quest;</b></h2>
             <pre>
-                <b>&iquest;QUÉ ES UDP&quest;</b>
                 El protocolo de datagramas de usuario&comma; abreviado como UDP&comma; es un protocolo <b>que permite la transmisión sin 
                 conexión a datagramas</b> en redes basadas en IP&period; Para obetener los servicios deseados en los hosts de destino&comma;
                 se basa en los puertos que están listados como uno de los campos principales en la cabecera UDP&period; Como muchos 
                 otros protocolos de red&comma; UDP pertenece a la familia de protocolos de Internet&comma; por lo que debe clasificarse 
                 en el nivel de transporte y&comma; en consecuencia&comma; se encuentra en una capa intermedia entre la capa de red y la 
                 capa de aplicación&period;
+ 
             </pre>
-        </section1>
-        <article1>
-            <b>&excl;&Nu;&Omicron;&Tau;&Alpha;</b>
-            
-            El protocolo UDP es una <b>alternativa</b> directa al protocolo más utilizado&comma; el <b>TCP</b>&comma; aunque ambos se diferencian
-            sobre todo en un punto&colon;mientras que la transmisión en el protocolo TCP tiene lugar una vez se ha producido 
-            el enlace obligatorio de 3 vías &lpar;con acuse de recibo mutuo entre el emisor y el receptor&comma; incluida la 
-            sesión de comunicación&rpar;&comma; el protocolo UDP no utiliza este procedimiento con el fin de mantener el <b>tiempo de 
-            transmisión</b> lo mas bajo posible&period;
-        </article1>
+        </section>
+        <section>
+            <h2><b>&iexcl;Nota&excl;</b></h2>
+            <pre>
+               El protocolo UDP es una <b>alternativa</b> directa al protocolo más utilizado&comma; el <b>TCP</b>&comma; aunque ambos se diferencian
+               sobre todo en un punto&colon;mientras que la transmisión en el protocolo TCP tiene lugar una vez se ha producido 
+               el enlace obligatorio de 3 vías &lpar;con acuse de recibo mutuo entre el emisor y el receptor&comma; incluida la 
+               sesión de comunicación&rpar;&comma; el protocolo UDP no utiliza este procedimiento con el fin de mantener el <b>tiempo de 
+               transmisión</b> lo mas bajo posible&period;
+            </pre>
+        </section>
 
-        <section2>
-           <pre>
+        <section>
+         <pre>
                Mediante el protocolo de datagramas de usuario&comma; una aplicación puede enviar información muy rápidamente&comma; ya 
                que no es necesario establecer una conexión con el receptor ni esperar una respuesta&period; Sin embargo&comma; no hay 
                garantía de que los paquetes vayan a llegar <b>completos</b> y respetando el <b>orden</b> en el que fueron enviados&period; Además&comma;
@@ -47,47 +49,55 @@
                UDP puede añadir <b>opcionalmente una suma de verificación</b> &lpar;que es obligatoria en IPv6&rpar; que permite detectar los 
                paquetes defectuosos&period;   
            </pre>
-        </section2>
-        <article2>
-            <b>&rtrif;DEFINICIÓN</b>
-             El UDP &lpar;User datagram protocol&rpar; es un protocolo sin conexión de la familia de protocolos de Internet que 
-             funciona en la capa de transporte y fue especificado en 1980 en la <b>RFC &lpar;Request for Comments&rpar; 768</b>&period; El
-             protocolo UDP se utiliza para <b>transmitir datagramas de form rápida en redes IP</b> y funciona como una
-             alternativa sencilla y sin retardos del protocolo TCP&period; Se usa principalmente para consultas DNS&comma; conexiones 
-             VPN y para el streaming de audio y vídeo&period;
-        </article2>
+        </section>
 
-        <section3>
+        <section>
+            
             <pre>
-                <b>CARACTERÍSTICAS UDP</b>
-                <b>Protocolo Best-efford</b>
+            <h2><b>Definición</b></h2>
+               El UDP &lpar;User datagram protocol&rpar; es un protocolo sin conexión de la familia de protocolos de Internet que 
+               funciona en la capa de transporte y fue especificado en 1980 en la <b>RFC &lpar;Request for Comments&rpar; 768</b>&period; El
+               protocolo UDP se utiliza para <b>transmitir datagramas de form rápida en redes IP</b> y funciona como una
+               alternativa sencilla y sin retardos del protocolo TCP&period; Se usa principalmente para consultas DNS&comma; conexiones 
+               VPN y para el streaming de audio y vídeo&period;
+            </pre>
+        </section>
+
+        <section>
+            <h2><b>CARACTERÍSTICAS UDP</b></h2>
+            <pre>
+                <h2><b>&middot;Protocolo Best-efford</b></h2>
                 UDP es un protocolo no confiable&comma; debido a que no existen reconocimientos de los datos que estamos enviado al 
                 destino a comparación de TCP&period; Cuando una computadora envía un paquete al servidor como vemos en la imagen 4&comma; el
                 servidor no responde con un reconocimiento de que efectivamente recibió el paquete&period; Se pueden enviar 5 paquetes
                 diferentes y no se obtendrá ningún reconocimiento de esos 5 paquetes&comma; por lo tanto&comma; no sabes si llegaron a su
                 destino y a UDP no le interesa si se pierden o no y por supuesto no los envía nuevamente&period;
+
+                <img src="multimedia/img3.jpeg" alt="" />
                 
                 &iquest;Qué hacemos en el caso que se pierda un paquete en la red&quest;&comma; pues la tarea recae sobre el protocolo de la capa de 
                 aplicación y sus mecanismos para lidiar con las pérdidas de datos&period;
 
-                <b>Encapsulación UDP</b>
+                <h2><b>&middot;Encapsulación UDP</b></h2>
                 La información que se genera en la capa de aplicación&comma; es entregada en bloques discretos de bytes al protocolo de la
                 capa de transporte&comma; UDP encapsula esos datos &lpar;bytes&rpar; recibidos con su propio header&comma; sin embargo cuando se utiliza
                 UDP ya no se denominan segmentos a comparación de TCP&comma; ahora se denominan datagramas&period; Los datagramas son
                 enviados a la capa de red&comma; la capa de red añade su header y los datagramas se convierten en paquetes&period; Finalmente
                 los paquetes son enviados a la capa de enlace de datos donde se convierten en tramas&period; 
 
-                <b>Entrega de Datagramas</b>
+                <img src="multimedia/img4.jpeg" alt="" />
+
+                <h2><b>&middot;Entrega de Datagramas</b></h2>
                 Cuando los datagramas son enviados al destino&comma; el protocolo UDP en el dispositivo de destino no los ordena&comma; es decir 
                 que los datos contenidos en los datagramas son entregados a la aplicación en el orden que llegan&period; Es tarea de la
                 aplicación ordenar los datos si así lo requiere&period;
 
-                <b>Connectionless y control de flujo y congestión</b>
+                <h2><b>&middot;Connectionless y control de flujo y congestión</b></h2>
                 UDP es un protocolo conectionless&comma;  esto significa que no hay un establecimiento de conexión con el dispositivo de
                 destino&comma; no existe el proceso 3-WAY HANDSHAKE que existe en TCP&comma; ni tampoco existe un cierre de la sesión&period; Por otro
                 lado ningún dispositivo toma acción respecto a la congestión o al control de flujo que se deba realizar en la red&period;
             </pre>
-        </section3>
+        </section>
     </main>
     <footer>
 
