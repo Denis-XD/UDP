@@ -30,7 +30,54 @@ h1{
     padding: 20px;
     margin: 5px auto;
     font-size: 3em;
-    background-color: rgb(8, 235, 167);
-    color: rgb(136, 14, 39);
+    background-color: #ffcba4;
+    color: black;
     
 }
+body{
+    background-color: #e4fbfb;
+}
+section{
+    text-align: left;
+    background-color: #c7f7f7;
+   
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 20px;
+    padding: 10px;
+    border: 5px solid #1d3557;
+    margin: 20px 30px;
+    
+
+}
+.imagen{
+    text-align: center;
+}
+h2{
+    padding: 15px;
+}
+table{
+    
+    margin: 15px auto;
+    padding: 15px ;
+}
+article{
+    text-align: center;
+}
+h3{
+    padding: 15px;
+    font-size: 25px;
+}
+th{
+    background-color: #ecd6c0;
+}
+td{
+    background-color: #ffffec;
+}
+footer{
+    background-color: #457b9d;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px 20px 20px 20px;
+    margin-top: 10px;
+}
+

@@ -13,12 +13,18 @@
     </header>
     <nav>
       <ul class="menu">
-          <li class="op"><a href="#1">&iquest;QUÉ ES UDP&quest;</a></li>
-          <li class="op"><a href="#2">CARACTERÍSTICAS UDP</a></li>
-          <li class="op"><a href="#3">&iquest;Como se estructura la cabecera UDP&quest;</a></li>
-          <li class="op"><a href="#4">&iquest;Que aplicaciones utilizan el protocolo UDP&quest;</a></li>
-          <li class="op"><a href="#5">TCP versus UDP</a></li>
-          <li class="op"><a href="#6">Ejemplo de UDP</a></li>
+        <li class="op"><a href="#1">&iquest;QUÉ ES UDP&quest;</a></li>
+        <li class="op"><a href="#2">CARACTERÍSTICAS UDP</a></li>
+        <li class="op">
+          <a href="#3">&iquest;Como se estructura la cabecera UDP&quest;</a>
+        </li>
+        <li class="op">
+          <a href="#4"
+            >&iquest;Que aplicaciones utilizan el protocolo UDP&quest;</a
+          >
+        </li>
+        <li class="op"><a href="#5">TCP versus UDP</a></li>
+        <li class="op"><a href="#6">Ejemplo de UDP</a></li>
       </ul>
     </nav>
     <main>
@@ -77,7 +83,9 @@
             diferentes y no se obtendrá ningún reconocimiento de esos 5 paquetes&comma; por lo tanto&comma; no sabes si llegaron a su
             destino y a UDP no le interesa si se pierden o no y por supuesto no los envía nuevamente&period;
 
-            <img src="multimedia/img3.png" alt="" />
+            <div class="imagen">
+              <img src="multimedia/img3.png" alt="" />
+            </div>
             
             &iquest;Qué hacemos en el caso que se pierda un paquete en la red&quest;&comma; pues la tarea recae sobre el protocolo de la capa de 
             aplicación y sus mecanismos para lidiar con las pérdidas de datos&period;
@@ -88,8 +96,10 @@
             UDP ya no se denominan segmentos a comparación de TCP&comma; ahora se denominan datagramas&period; Los datagramas son
             enviados a la capa de red&comma; la capa de red añade su header y los datagramas se convierten en paquetes&period; Finalmente
             los paquetes son enviados a la capa de enlace de datos donde se convierten en tramas&period; 
-
-            <img src="multimedia/img4.png" alt="" />
+            <div class="imagen">
+              <img src="multimedia/img4.png" alt="" />
+            </div>
+            
 
             <h2><b>&middot;Entrega de Datagramas</b></h2>
             Cuando los datagramas son enviados al destino&comma; el protocolo UDP en el dispositivo de destino no los ordena&comma; es decir 
@@ -128,6 +138,7 @@
             <td>Suma de verificacion</td>
           </tr>
         </table>
+
         <pre>
                 Los primeros 16 bits de la cabecera identifican el <b>puerto de origen</b> desde el que se 
                 ha enviado un datagrama correcto&period; El receptor necesita esta informacion para poder
@@ -142,12 +153,12 @@
             </pre
         >
         <div>
-          <p>&excl;Nota</p>
+          <h2><b>&iexcl;Nota&excl;</b></h2>
           <pre>
-                    Lo siguiente es aplicable a los campos de puerto&colon; si se trata de una aplicación del 
-                    lado del cliente&comma; es probable que el número de puerto asignado sea volátil&period; Si el 
-                    puerto ha sido asignado a un proceso del servidor&comma; el número de puerto será 
-                    normalmente uno de los puertos conocidos &lpar;well&macr;known ports&rpar;&period;
+                Lo siguiente es aplicable a los campos de puerto&colon; si se trata de una aplicación del 
+                lado del cliente&comma; es probable que el número de puerto asignado sea volátil&period; Si el 
+                puerto ha sido asignado a un proceso del servidor&comma; el número de puerto será 
+                normalmente uno de los puertos conocidos &lpar;well&macr;known ports&rpar;&period;
                 </pre
           >
         </div>
@@ -168,7 +179,9 @@
         </ul>
       </section>
       <section>
-        <h2 id="4">&iquest;Que aplicaciones utilizan el protocolo UDP&quest;</h2>
+        <h2 id="4">
+          &iquest;Que aplicaciones utilizan el protocolo UDP&quest;
+        </h2>
         <pre>
                 El protocolo de datagramas de usuario&comma; debido a su estructura mínima y a su falta 
                 de mecanismos que garanticen una transmisi&oacute;n completa y exitosa&comma; no puede 
@@ -236,13 +249,15 @@
           Las comunicaciones UDP no pasan por este proceso&period; En su lugar&comma; un 
           ordenador simplemente puede empezar a enviar datos al otro&colon;
         </pre>
-        <img src="multimedia/img1.jpg" alt="" />
+        <div class="imagen">
+          <img src="multimedia/img1.jpg" alt="" />
+        </div>
       </section>
       <article>
         <h3 id="6">Ejemplo de UDP</h3>
         <video src="multimedia/vid1.mp4" controls></video>
       </article>
     </main>
-    <footer></footer>
+    <footer>&copy;Derechos Reservados WebServer</footer>
   </body>
 </html>
